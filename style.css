@@ -1,0 +1,454 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #172a26;
+  background: #f3f5f1;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --green: #174b40;
+  --green-dark: #123c35;
+  --muted: #6b7974;
+  --line: #dce4df;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+  background:
+    radial-gradient(ellipse at 12% 10%, #e0ebe3 0, transparent 38%), #f3f5f1;
+}
+
+.login-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(390px, 0.88fr);
+  width: min(100%, 1020px);
+  min-height: 610px;
+  overflow: hidden;
+  border: 1px solid rgba(22, 59, 49, 0.08);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(27, 55, 45, 0.12);
+}
+
+.form-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px clamp(32px, 6vw, 76px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 62px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  place-items: center;
+  border-radius: 15px;
+  color: #fff;
+  background: var(--green);
+}
+
+.brand-mark svg {
+  width: 26px;
+  height: 26px;
+}
+
+.brand-name {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  line-height: 1.3;
+}
+
+.brand-name span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.portal-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: -38px 0 34px;
+  font-size: 13px;
+}
+
+.portal-nav button,
+.portal-nav a,
+.switch-view {
+  padding: 0;
+  border: 0;
+  color: var(--green);
+  background: transparent;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.portal-nav button:hover,
+.portal-nav a:hover,
+.switch-view:hover {
+  text-decoration: underline;
+}
+
+.switch-view {
+  font-size: inherit;
+}
+
+.register-heading {
+  margin-bottom: 24px;
+}
+
+.register-heading .intro {
+  margin-bottom: 0;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #50806d;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+h1 {
+  margin: 0;
+  color: #182b26;
+  font-size: clamp(30px, 4vw, 38px);
+  letter-spacing: -0.045em;
+}
+
+.intro {
+  margin: 12px 0 32px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #263b35;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 15px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  color: #1d312b;
+  background: #fff;
+  font: inherit;
+  font-size: 14px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+input::placeholder {
+  color: #a0aaa5;
+}
+
+input:focus {
+  border-color: #4a806d;
+  box-shadow: 0 0 0 3px rgba(74, 128, 109, 0.14);
+}
+
+.password-wrap {
+  position: relative;
+}
+
+.password-wrap input {
+  padding-right: 64px;
+}
+
+.show-password {
+  position: absolute;
+  top: 50%;
+  right: 13px;
+  padding: 5px;
+  transform: translateY(-50%);
+  border: 0;
+  color: var(--green);
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 2px 0 24px;
+  font-size: 12px;
+}
+
+.remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #586760;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.remember input {
+  width: 15px;
+  min-height: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--green);
+}
+
+.help-link {
+  color: var(--green);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.help-link:hover {
+  text-decoration: underline;
+}
+
+.submit-button {
+  width: 100%;
+  min-height: 51px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--green);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-1px);
+  background: var(--green-dark);
+}
+
+.submit-button:focus-visible,
+.show-password:focus-visible,
+.help-link:focus-visible,
+.portal-nav button:focus-visible,
+.portal-nav a:focus-visible,
+.switch-view:focus-visible {
+  outline: 3px solid #8bb9a5;
+  outline-offset: 3px;
+}
+
+.view-switch {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.status {
+  margin: 14px 0 0;
+  color: #934a2a;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.form-footnote {
+  margin: 32px 0 0;
+  color: #87918c;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.welcome-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100%;
+  overflow: hidden;
+  padding: 54px;
+  color: #fff;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(14, 53, 44, 0.03) 24%,
+      rgba(12, 42, 35, 0.9) 100%
+    ),
+    linear-gradient(135deg, #9fb99f, #477b64 50%, #244b3e);
+}
+
+.welcome-panel::before,
+.welcome-panel::after {
+  position: absolute;
+  z-index: 0;
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  content: "";
+}
+
+.welcome-panel::before {
+  top: 76px;
+  right: -120px;
+  box-shadow:
+    0 0 0 28px rgba(255, 255, 255, 0.06),
+    0 0 0 57px rgba(255, 255, 255, 0.05);
+}
+
+.welcome-panel::after {
+  top: 155px;
+  left: -245px;
+  width: 290px;
+  height: 290px;
+}
+
+.panel-content {
+  position: relative;
+  z-index: 1;
+}
+
+.school-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.school-tag span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c9e6ad;
+}
+
+.welcome-panel h2 {
+  max-width: 340px;
+  margin: 0;
+  font-size: clamp(30px, 4vw, 42px);
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+}
+
+.welcome-panel p {
+  max-width: 330px;
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.panel-rule {
+  width: 44px;
+  height: 3px;
+  margin-top: 29px;
+  border-radius: 4px;
+  background: #c9e6ad;
+}
+
+@media (max-width: 760px) {
+  body {
+    padding: 18px 14px;
+  }
+
+  .login-shell {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    min-height: unset;
+    border-radius: 20px;
+  }
+
+  .form-panel {
+    padding: 38px clamp(24px, 8vw, 50px) 34px;
+  }
+
+  .brand {
+    margin-bottom: 42px;
+  }
+
+  .portal-nav {
+    margin-top: -22px;
+    margin-bottom: 28px;
+  }
+
+  .welcome-panel {
+    min-height: 215px;
+    padding: 30px clamp(24px, 8vw, 50px);
+  }
+
+  .welcome-panel h2 {
+    max-width: 380px;
+    font-size: 28px;
+  }
+
+  .welcome-panel p {
+    margin-top: 8px;
+    font-size: 12px;
+  }
+
+  .school-tag {
+    margin-bottom: 13px;
+  }
+
+  .panel-rule {
+    display: none;
+  }
+
+  .welcome-panel::before {
+    top: -210px;
+    right: -130px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

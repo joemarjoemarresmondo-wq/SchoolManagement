@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sign in to the MEGAMIND student and staff portal."
+    />
+    <meta name="theme-color" content="#123c35" />
+    <title>Sign in | MEGAMIND</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="login-shell">
+      <section class="form-panel" aria-labelledby="login-heading">
+        <div class="brand" aria-label="MEGAMIND">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M3 9.2 12 4l9 5.2-9 5.2L3 9.2Z"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6.5 11.4v4.1c3.4 2.8 7.6 2.8 11 0v-4.1M21 9.5v5"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="brand-name">
+            MEGAMIND
+            <span>SCHOOL PORTAL</span>
+          </div>
+        </div>
+
+        <nav class="portal-nav" aria-label="Portal pages">
+          <button id="show-register" type="button">Register</button>
+          <a href="dashboard.html">Dashboard</a>
+        </nav>
+
+        <div id="login-view">
+          <p class="eyebrow">STUDENT &amp; STAFF PORTAL</p>
+          <h1 id="login-heading">Welcome back</h1>
+          <p class="intro">Sign in with your school account to continue.</p>
+
+          <form id="login-form">
+            <div class="field">
+              <label for="email">Gmail address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="Enter your Gmail address"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="password">Password</label>
+              <div class="password-wrap">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Enter your password"
+                  required
+                />
+                <button
+                  class="show-password"
+                  id="show-password"
+                  type="button"
+                  aria-controls="password"
+                  aria-pressed="false"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+
+            <div class="form-options">
+              <label class="remember" for="remember">
+                <input id="remember" name="remember" type="checkbox" />
+                Remember me
+              </label>
+              <a class="help-link" href="#school-support">
+                Need help?
+              </a>
+            </div>
+
+            <button class="submit-button" type="submit">Sign in</button>
+            <p class="status" id="login-status" role="status" aria-live="polite" hidden></p>
+          </form>
+
+          <p class="view-switch">
+            New to the portal?
+            <button class="switch-view" id="switch-to-register" type="button">Create an account</button>
+          </p>
+          <p class="form-footnote" id="school-support">
+            For account access or password assistance, please contact the school office.
+          </p>
+        </div>
+
+        <div id="register-view" hidden>
+          <p class="eyebrow">JOIN THE SCHOOL PORTAL</p>
+          <h1 id="register-heading">Create account</h1>
+          <p class="intro">Register for your MEGAMIND account.</p>
+
+          <form id="register-form">
+            <div class="field">
+              <label for="register-name">Full name</label>
+              <input
+                id="register-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="register-email">Gmail address</label>
+              <input
+                id="register-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@gmail.com"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="register-password">Password</label>
+              <div class="password-wrap">
+                <input
+                  id="register-password"
+                  name="password"
+                  type="password"
+                  autocomplete="new-password"
+                  minlength="8"
+                  placeholder="At least 8 characters"
+                  required
+                />
+                <button
+                  class="show-password"
+                  type="button"
+                  aria-controls="register-password"
+                  aria-pressed="false"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+            <div class="field">
+              <label for="confirm-password">Confirm password</label>
+              <div class="password-wrap">
+                <input
+                  id="confirm-password"
+                  name="confirmPassword"
+                  type="password"
+                  autocomplete="new-password"
+                  minlength="8"
+                  placeholder="Enter your password again"
+                  required
+                />
+                <button
+                  class="show-password"
+                  type="button"
+                  aria-controls="confirm-password"
+                  aria-pressed="false"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+            <button class="submit-button" type="submit">Register</button>
+            <p class="status" id="register-status" role="status" aria-live="polite" hidden></p>
+          </form>
+
+          <p class="view-switch">
+            Already registered?
+            <button class="switch-view" id="switch-to-login" type="button">Sign in</button>
+          </p>
+        </div>
+      </section>
+
+      <aside class="welcome-panel" aria-label="School welcome">
+        <div class="panel-content">
+          <div class="school-tag"><span aria-hidden="true"></span> LEARN · GROW · SUCCEED</div>
+          <h2>A place to learn and achieve more.</h2>
+          <p>Welcome to the MEGAMIND online portal.</p>
+          <div class="panel-rule" aria-hidden="true"></div>
+        </div>
+      </aside>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js" defer></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>
