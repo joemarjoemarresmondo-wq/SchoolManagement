@@ -6,6 +6,11 @@ const registerView = document.querySelector("#register-view");
 const registerForm = document.querySelector("#register-form");
 const registerStatus = document.querySelector("#register-status");
 
+if (new URLSearchParams(window.location.search).get("verification") === "required") {
+  loginStatus.textContent = "Verify your Gmail before signing in.";
+  loginStatus.hidden = false;
+}
+
 const showView = (view) => {
   const isRegisterView = view === "register";
   loginView.hidden = isRegisterView;
