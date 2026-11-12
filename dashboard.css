@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #f3f5f1;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.dashboard-shell {
+  display: flex;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.logout-button {
+  min-height: 42px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 9px;
+  color: #fff;
+  background: #174b40;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background: #123c35;
+}
+
+.logout-button:focus-visible {
+  outline: 3px solid #8bb9a5;
+  outline-offset: 3px;
+}
+
+.logout-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+#logout-status {
+  position: absolute;
+  top: 76px;
+  right: 24px;
+  color: #934a2a;
+  font-size: 13px;
+}

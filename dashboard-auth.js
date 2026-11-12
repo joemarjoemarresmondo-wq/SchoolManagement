@@ -16,6 +16,30 @@ const requireSignedInUser = async () => {
   }
 };
 
+const logoutButton = document.querySelector("#logout-button");
+const logoutStatus = document.querySelector("#logout-status");
+
+logoutButton.addEventListener("click", async () => {
+  logoutButton.disabled = true;
+  logoutStatus.hidden = true;
+
+  try {
+    const { error } = await window.supabaseClient.auth.signOut();
+    if (error) {
+      logoutStatus.textContent = `Unable to log out: ${error.message}`;
+      logoutStatus.hidden = false;
+      return;
+    }
+
+    window.location.replace("index.html");
+  } catch (error) {
+    logoutStatus.textContent = `Unable to log out: ${error.message}`;
+    logoutStatus.hidden = false;
+  } finally {
+    logoutButton.disabled = false;
+  }
+});
+
 requireSignedInUser().catch((error) => {
   document.body.textContent = `Unable to connect to the sign-in service: ${error.message}`;
 });
